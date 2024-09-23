@@ -30,7 +30,9 @@ Through differential expression analysis using DESeq2, variance analysis, t-test
 
 4. The 29 genes were all uncorrelated with themselves (strongest absolute value of correlation coefficient = 0.37), as well as being uncorrelated with the sample metadata attributes (besides the control/cancer annotation).
 
-PCA analysis was also performed in the pipeline, revealing striking clusters when colored by sample type. The clusters were also colored according to a few other sample metadata attributes, without strong cluster separation. 
+PCA analysis was also performed in the pipeline, revealing striking clusters when colored by sample type. 
+While PCA is most useful during unsupervised exploration of unlabeled data, the results indicated that a large portion of the variance in the data was explained by sample type.
+The clusters were also colored according to a few other sample metadata attributes, without strong cluster separation. 
 
 Finally, once the set of 29 genes was selected, predictive models were trained and cross-validated to optimize both numbers of features included as well as other parameters (SVM gamma value, NN number of hidden layers, and RF number of features to sample per tree). 
 

@@ -1,4 +1,4 @@
-# Machine Learning Models for Cancer Prediction Based on Proteomics Data
+# Machine Learning Models for Cancer Prediction Based on RNA-Seq Data
 Author: John Paul Wick
 
 Date: 16 September 2024

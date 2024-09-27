@@ -1,6 +1,7 @@
 ML Predictive Models For Cancer
 ================
 Author: John Paul Wick
+
 16 September 2024
 
 - [1 Data Loading, Partitioning, and
@@ -13,23 +14,6 @@ Author: John Paul Wick
 - [6 Model Testing](#6-model-testing)
 - [7 Conclusions](#7-conclusions)
 - [8 References:](#8-references)
-
-<style>
-pre code, pre, code {
-  white-space: pre !important;
-  overflow-x: auto !important;
-  word-break: keep-all !important;
-  word-wrap: initial !important;
-}
-body {
-.lightgreen table {
-  background-color:#eff8e5;
-}
-&#10;.yellow table {
-  background-color:#ffff99;
-}
-text-align: justify}
-</style>
 
 # 1 Data Loading, Partitioning, and Normalization
 

@@ -1,6 +1,6 @@
-RBIF 112 Final Project
+ML Predictive Models For Cancer
 ================
-John Paul Wick
+Author: John Paul Wick
 16 September 2024
 
 - [1 Data Loading, Partitioning, and
@@ -273,8 +273,8 @@ testingdata
     ## colData names(87): barcode patient ... paper_PARADIGM Clusters
     ##   paper_Pan-Gyn Clusters
 
-In the code above, I loaded in the TCGA dataset obtained from the final
-project prompt, in the form of a SummarizedExperiment object. Of all 226
+In the code above, I loaded in the TCGA dataset obtained TCGA-BRCA project,
+in the form of a SummarizedExperiment object. Of all 226
 samples, I select only 50 samples from each group (control and disease
 type), samples 64-163, for training data. In the code chunk above, I
 select only those 100 samples; I select only the protein-coding
@@ -303,11 +303,6 @@ probing for appropriate combinations of genes to use to train the
 models.
 
 # 2 Exploration of Variance in the Data
-
-*Which genes explain the greatest variance in the data? Which ones
-explain the least? Please explain why exploring the variance in the data
-is important for model building and how you would determine which genes
-to include in the model.*
 
 The first thing I do is identify and remove genes with no variance
 (these are the genes which were not detected at all in any of the
@@ -488,12 +483,6 @@ test: I want to find the subset of these 110 genes which are not
 correlated with each other.
 
 # 3 Gene Correlation
-
-*Which genes are associated with continuous data attributes (e.g. days
-to death, age, etc…)? Do any of these genes represent confounding
-variables in the data set?* *Which genes correlate with other genes? to
-what extent and significance?* *Which meta data features correlate with
-each other?*
 
 Interestingly, nearly all the protein-coding genes are significantly
 differentially expressed between disease and control samples, as seen
@@ -745,11 +734,6 @@ The data look ready for model building!
 
 # 4 Principal Component Analysis
 
-*Perform a PCA analysis on the data and explain whether there are any
-data attributes that are separated into different clusters by the PCA
-analysis. Please explain why exploring this is important for model
-building.*
-
 The final portion of data processing and exploration, before model
 building and testing, is Principal Component Analysis. In the code
 below, I perform a PCA on the full training dataset, and color by
@@ -844,16 +828,8 @@ from the plot.
 
 # 5 Model Development
 
-*Separate into testing and training data sets.*
-
-*Build logistic regression/linear regression, random forest, SVM, neural
-network models on the prediction of which people have breast cancer.*
-*When building this model, Please consider what parameters can be tuned
-in each model and describe how you would decide how to set these
-parameters.*
-
-First, I copy in all the wrappers and helper functions developed
-throughout the course to make model building a bit easier:
+First, I copy in a set of model wrappers and helper functions to make 
+model building a bit easier and homogenous for each model type:
 
 ``` r
 library(neuralnet); library(e1071); library(randomForest)
@@ -1368,9 +1344,6 @@ predictor.RF$train(trainingoutcomes ~ . , df_training[,1:20,drop=F], mtry=5, imp
 
 # 6 Model Testing
 
-*Compare the performance of each model and describe why you think one
-model performed better than the others.*
-
 At this point, I have examined and explored the data, identified a small
 subset of genes which are likely to be good predictors of cancer, and
 trained four different types of classifier models on the data while
@@ -1560,11 +1533,8 @@ annotation to predict. There are a number of ways that these models can
 be fine-tuned even more, increasing predictive power and reducing bias
 further. With more time and computational power, a wider range of
 features, parameters, and parameter values could be evaluated and
-optimized. This course has been an excellent introduction to
-mathematical modeling and machine learning in the bioinformatics space.
-The models I developed in this project reflect a vast amount of progress
-made in a short amount of time, and I am excited to continue developing
-and applying this skill set in my future career.
+optimized. I am excited to continue developing and applying this skill 
+set in my future career.
 
 # 8 References:
 
